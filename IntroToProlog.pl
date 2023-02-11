@@ -370,19 +370,3 @@ prefix([X|R1],[X|R2]):-prefix(R1,R2).
 
 subset(_,[]).
 subset(X,[H|Y]):-member(H,X),subset(X,Y).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
