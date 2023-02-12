@@ -370,3 +370,22 @@ prefix([X|R1],[X|R2]):-prefix(R1,R2).
 
 subset(_,[]).
 subset(X,[H|Y]):-member(H,X),subset(X,Y).
+
+/* General Comments */
+
+/* Sometimes as objects, you see stuff of the form t(e,t(t(e,e), e)), 
+ *  however t/2 is undefined. This usually means that the predicate that takes
+ *  this as an input doesn't require what t/2 is. 
+ * But in most cases of this module (I think), t(L,R) will represent a binary
+ *  tree node, where L and R are the left and right children of the node respectively.
+ *
+ * e.g. t(e,t(t(e,e), e))
+ *
+ *              -
+ *             / \
+ *            e   -
+ *               / \
+ *              -   e
+ *             / \
+ *            e   e
+*/
